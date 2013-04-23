@@ -115,5 +115,10 @@ JSocial = function() {
 
             $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  ', oops.</p>');
         }
+	/*   
+		This is not
+		The greatest comment in the world, no
+		This is just a tribute
+	 */
     };
 }();
