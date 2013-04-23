@@ -19,7 +19,7 @@ JSocial = function() {
             this.Aldream();
             this.petehunt();
             /*
-                Put a call to your function randomly between the other functions below to avoid merge conflicts
+                Put a call to your function randomly between the other functions above to avoid merge conflicts
             */
         },
         thisjustin: function thisjustin() {
