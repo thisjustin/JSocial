@@ -36,18 +36,18 @@ JSocial = function() {
 	Aldream: function Aldream() {
 		// Uses the users list made by thisjustin() to display a simple gallery of github avatars.
 		var style = $('<style>'
-				+ 	'#thisjustin img {'
-				+	'	filter: grayscale(1); -webkit-filter: grayscale(1); -moz-filter: grayscale(1); -o-filter: grayscale(1); -ms-filter: grayscale(1);'
-				+ 	'	transition: all 1s; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; -ms-transition: all 1s;'
-				+	'	border-radius: 5px;'
-				+	'}'
-				+ 	'#thisjustin img:hover {'
-				+	'	filter: grayscale(0); -webkit-filter: grayscale(0); -moz-filter: grayscale(0); -o-filter: grayscale(0); -ms-filter: grayscale(0);'
-				+	'	border-radius: 40px;'
-				+	'}'
-				+ 	'#thisjustin a { display: inline-block; margin: 1em; }'
-				+ 	'#thisjustin a > i {position: absolute; margin-left: -75px; margin-top: 80px; font-size: 1em;}'
-				+ '</style>');
+			+ 	'#thisjustin img {'
+			+	'	filter: grayscale(1); -webkit-filter: grayscale(1); -moz-filter: grayscale(1); -o-filter: grayscale(1); -ms-filter: grayscale(1);'
+			+ 	'	transition: all 1s; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; -ms-transition: all 1s;'
+			+	'	border-radius: 5px;'
+			+	'}'
+			+ 	'#thisjustin img:hover {'
+			+	'	filter: grayscale(0); -webkit-filter: grayscale(0); -moz-filter: grayscale(0); -o-filter: grayscale(0); -ms-filter: grayscale(0);'
+			+	'	border-radius: 40px;'
+			+	'}'
+			+ 	'#thisjustin a { display: inline-block; margin: 1em; }'
+			+ 	'#thisjustin a > i {position: absolute; margin-left: -75px; margin-top: 80px; font-size: 1em;}'
+			+ '</style>');
 		$('html > head').append(style);
 		
 		$('#thisjustin > a').each(function(i) {
