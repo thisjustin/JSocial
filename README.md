@@ -15,5 +15,5 @@ Rules:
 * Never entirely delete anyone else's function. Edit it if needed.
 * jQuery 2.0 is included for your convenience
 
-If we're luck we'll make something useful or at least interesting.
+If we're lucky maybe we'll make something useful or at least interesting.
 
