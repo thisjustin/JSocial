@@ -24,7 +24,9 @@ JSocial = function() {
                 var re = /function\s{1}(\w*)\(/i,
                     results = re.exec(this);
                 
-                names += ' ' + '<a href="http://github.com/' + results[1] + '">' + results[1] + '</a>';
+                if (results && results[1]) { // To prevent null results (with "init()" for instance) or errors
+    				names += ' ' + '<a href="http://github.com/' + results[1] + '">' + results[1] + '</a>';
+				}
             });
 
             message = '<div id="thisjustin">JSocial has been contributed to by: ' + names + '</div>';
