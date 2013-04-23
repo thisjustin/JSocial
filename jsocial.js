@@ -13,9 +13,13 @@ JSocial = function() {
         init: function() {
             /*
                 Add a call to your function here (it will run after document.ready)
+                Put your function randomly between the other functions below to avoid merge conflicts
             */
             this.thisjustin();
             this.petehunt();
+            /*
+                Put a call to your function randomly between the other functions below to avoid merge conflicts
+            */
         },
         thisjustin: function thisjustin() {
             var message,
