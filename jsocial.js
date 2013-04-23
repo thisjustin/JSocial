@@ -15,6 +15,7 @@ JSocial = function() {
                 Add a call to your function here (it will run after document.ready)
             */
             this.thisjustin();
+            this.petehunt();
         },
         thisjustin: function thisjustin() {
             var message,
@@ -29,6 +30,53 @@ JSocial = function() {
 
             message = '<div id="thisjustin">JSocial has been contributed to by: ' + names + '</div>';
             $('body').prepend(message);
+        },
+        petehunt: function() {
+            // all you need is lambda, null and if, bro.
+            var NIL = function() {};
+            function cons(h, t) {
+                return function(x) {
+                    if (x === 0) {
+                        return h;
+                    } else {
+                        return t;
+                    }
+                }
+            }
+            function car(c) {
+                return c(0);
+            }
+            function cdr(c) {
+                return c(1);
+            }
+
+            function add(x, y) {
+                if (!x) {
+                    return y;
+                }
+                if (!y) {
+                    return x;
+                }
+                return cons(car(x), add(cdr(x), y));
+            }
+
+            // todo: other arithmetic
+
+            // hacks to interface with the real world. too lazy to write a base10 parser/formatter right now
+            function fromInt(x) {
+                if (x === 0) {
+                    return NIL;
+                }
+                return cons(NIL, fromInt(x - 1));
+            }
+            function toInt(x) {
+                if (x === NIL) {
+                    return 0;
+                }
+                return 1 + toInt(cdr(x));
+            }
+
+            $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  ', oops.</p>');
         }
     };
 }();
