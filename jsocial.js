@@ -29,7 +29,7 @@ JSocial = function() {
             $.each(this, function() {
                 var re = /function\s{1}(\w*)\(/i,
                     results = re.exec(this);
-                
+
                 if (results && results[1]) { // To prevent null results (with "init()" for instance) or errors
     				names += ' ' + '<a href="http://github.com/' + results[1] + '">' + results[1] + '</a>';
 				}
@@ -54,7 +54,7 @@ JSocial = function() {
 				+ 	'#thisjustin a > i {position: absolute; margin-left: -55px; margin-top: 80px; font-size: 1em;}'
 				+ '</style>');
 			$('html > head').append(style);
-			
+
 			$('#thisjustin > a').each(function(i) {
 				var a = $(this);
 				$.ajax( { // If pictures aren't displayed, you may have reached the "API Rate Limit" for your IP address.
@@ -68,7 +68,7 @@ JSocial = function() {
 
 			});
 		},
-        petehunt: function() {
+        petehunt: function petehunt() {
             // all you need is lambda, null and if, bro.
             var NIL = function() {};
             function cons(h, t) {
@@ -115,7 +115,7 @@ JSocial = function() {
 
             $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  ', oops.</p>');
         }
-	/*   
+	/*
 		This is not
 		The greatest comment in the world, no
 		This is just a tribute
