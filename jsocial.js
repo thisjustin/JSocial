@@ -17,6 +17,7 @@ JSocial = function() {
             */
             this.thisjustin();
             this.Aldream();
+            this.tbeseda();
             this.petehunt();
             /*
                 Put a call to your function randomly between the other functions above to avoid merge conflicts
@@ -114,6 +115,29 @@ JSocial = function() {
             }
 
             $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  ', oops.</p>');
+        },
+        tbeseda: function tbeseda() {
+            var div_style = 'position:absolute;right:10px;bottom:10px;text-align:right;'
+            var $tbeseda_div = $('<div id=tbeseda style="'+div_style+'">').appendTo('body')
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    $tbeseda_div.append('<pre>'
+                            + 'Latitude: '+position.coords.latitude+'\n'
+                            + 'Longitude: '+position.coords.longitude
+                        + '</pre>'
+                    );
+
+                    var map_url = 'http://maps.googleapis.com/maps/api/staticmap?center='
+                        + position.coords.latitude+','
+                        + position.coords.longitude
+                        + '&zoom=18&size=350x200&sensor=false'
+
+                    $tbeseda_div.append('<img src="'+map_url+'" />');
+                });
+            } else {
+                $tbeseda_div.append('<p>Can\'t geolocate you, get a better browser!</p>');
+            }
         }
 	/*
 		This is not
