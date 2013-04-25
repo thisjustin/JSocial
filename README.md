@@ -7,6 +7,8 @@ A social coding experiment in Javascript
 To contribute:
 fork > edit > open a pull request > merge
 
+You can view the current state of the project here: http://thisjustin.github.io/JSocial/
+
 Rules:
 * Add a function with your Github name as its name to the jsocial.js file
 * DO NOT edit the index.html file (if you want to add anything there, use javascript :)
