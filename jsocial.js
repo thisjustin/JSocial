@@ -19,6 +19,7 @@ JSocial = function() {
             this.Aldream();
             this.tbeseda();
             this.petehunt();
+            this.emzosmizo();
             /*
                 Put a call to your function randomly between the other functions above to avoid merge conflicts
             */
@@ -138,7 +139,14 @@ JSocial = function() {
             } else {
                 $tbeseda_div.append('<p>Can\'t geolocate you, get a better browser!</p>');
             }
+        },
+        
+        emzosmizo: function emzosmizo(){
+	        var things = 
         }
+        
+        
+        
 	/*
 		This is not
 		The greatest comment in the world, no
