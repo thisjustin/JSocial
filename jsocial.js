@@ -17,6 +17,7 @@ JSocial = function() {
             */
             this.thisjustin();
             this.Aldream();
+            this.fidian();
             this.tbeseda();
             this.michaelarestad();
             this.petehunt();
@@ -70,6 +71,49 @@ JSocial = function() {
 
 			});
 		},
+        fidian: function fidian(str) {
+            // Ugly code to keep it short
+            var f = fidian;
+
+            if (!f.init) {
+                f.init = true;
+                // Just in case you need to override them
+                f._patt = /\{\{(.*?)\}\}/g;
+                f._get = function (m, z) {
+                    try {
+                        return Array.isArray(m) ? m[Math.floor(Math.random() * m.length)] : m(z);
+                    } catch (e) {
+                        return m;
+                    }   
+                };
+
+                // Sample data - add more!  JSocial.fidian.yourStuff = [ ... ]
+                f.contributedTo = 'contributed to,worked upon,enhanced,augmented'.split(',');
+                f.thankfully = ',gratefully,thankfully,amazingly'.split(',');
+                f.thankfullyMaybe = ',,{{thankfully}},{{thankfully}},very {{thankfully|uc}}'.split(',');
+
+                // Modifiers - add more!  JSocial.fidian.anotherModifier = function
+                f.uc = f.uc || function (s) { return s.toUpperCase(); };
+                f.ucFirst = f.ucFirst || function (s) { return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase(); };
+
+                // Add some text
+                $('#thisjustin').each(function () {
+                    $(this).contents().each(function () {
+                        if (this.nodeType === 3) {
+                            this.data = this.data.replace(/(contributed to by):/, fidian('{{thankfullyMaybe}} {{contributedTo}} by:'));
+                        }
+                    });
+                });
+            }
+
+            // Replace {{tag|modifier|modifier}} with looked up values
+            return (''+str).replace(f._patt, function (o, t) {
+                return t.replace(/\s*/g, '').split('|').reduce(function (z, n) {
+                    return f(f._get(f[n], z));
+                }, '');
+            });
+            return str;
+        },
         petehunt: function petehunt() {
             // all you need is lambda, null and if, bro.
             var NIL = function() {};
