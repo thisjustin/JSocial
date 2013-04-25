@@ -18,6 +18,7 @@ JSocial = function() {
             this.thisjustin();
             this.Aldream();
             this.tbeseda();
+            this.michaelarestad();
             this.petehunt();
             /*
                 Put a call to your function randomly between the other functions above to avoid merge conflicts
@@ -139,6 +140,255 @@ JSocial = function() {
                 $tbeseda_div.append('<p>Can\'t geolocate you, get a better browser!</p>');
             }
         }
+        
+        michaelarestad: function michaelarestad(){
+
+            // There's probably about a gazillion better ways to do this. Oh well. Refactor if you're awesome.
+            var space =       '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+                            + '\n'
+
+            var we =          '  HHHH       HHHH  HHHHHHH\n'
+                            + '  HHHH  HHH  HHHH  HHHH   \n'
+                            + '  HHHH HHHHH HHHH  HHHHHH \n'
+                            + '  HHHHHHH HHHHHHH  HHHH   \n'
+                            + '   HHHHH   HHHHH   HHHHHHH\n'
+
+            var are =         '   HHHHHHHH   HHHHHHHHH   HHHHHHH\n'
+                            + '  HHHH  HHHH  HHHH   HHH  HHHH   \n'
+                            + '  HHHHHHHHHH  HHHHHHHH    HHHHHH \n'
+                            + '  HHHH  HHHH  HHHH   HHH  HHHH   \n'
+                            + '  HHHH  HHHH  HHHH   HHH  HHHHHHH\n'
+
+            var mother =      '   HHHHH   HHHHH   HHHHHHHHH  HHHHHHHHHH  HHHH  HHHH  HHHHHHH  HHHHHHHHH \n'
+                            + '  HHHHHHH HHHHHHH  HHHHHHHHH  HHHHHHHHHH  HHHH  HHHH  HHHH     HHHH   HHH\n'
+                            + '  HHHH HHHHH HHHH  HHHH  HHH     HHHH     HHHHHHHHHH  HHHHHH   HHHHHHHH  \n'
+                            + '  HHHH  HHH  HHHH  HHHH  HHH     HHHH     HHHH  HHHH  HHHH     HHHH   HHH\n'
+                            + '  HHHH       HHHH  HHHHHHHHH     HHHH     HHHH  HHHH  HHHHHHH  HHHH   HHH\n'
+
+            var father =      '  HHHHHHH   HHHHHHHH   HHHHHHHHHH  HHHH  HHHH  HHHHHHH  HHHHHHHHH \n'
+                            + '  HHHH     HHHH  HHHH  HHHHHHHHHH  HHHH  HHHH  HHHH     HHHH   HHH\n'
+                            + '  HHHHHHH  HHHHHHHHHH     HHHH     HHHHHHHHHH  HHHHHH   HHHHHHHH  \n'
+                            + '  HHHH     HHHH  HHHH     HHHH     HHHH  HHHH  HHHH     HHHH   HHH\n'
+                            + '  HHHH     HHHH  HHHH     HHHH     HHHH  HHHH  HHHHHHH  HHHH   HHH\n'
+
+            var gentlemen =   '   HHHHHHHH   HHHHHHH  HHHHHH  HHH  HHHHHHHHHH  HHHH     HHHHHHH   HHHHH    HHHH   HHHHHHH  HHHHHH  HHH\n'
+                            + '  HHHH        HHHH     HHHHHHH HHH  HHHHHHHHHH  HHHH     HHHH     HHHHHHH HHHHHHH  HHHH     HHHHHHH HHH\n'
+                            + '  HHHH  HHHH  HHHHHH   HHHH HHHHHH     HHHH     HHHH     HHHHHH   HHHH HHHHH HHHH  HHHHHH   HHHH HHHHHH\n'
+                            + '  HHHH   HHH  HHHH     HHHH  HHHHH     HHHH     HHHH     HHHH     HHHH  HHH  HHHH  HHHH     HHHH  HHHHH\n'
+                            + '   HHHHHH  H  HHHHHHH  HHHH   HHHH     HHHH     HHHHHHH  HHHHHHH  HHHH       HHHH  HHHHHHH  HHHH   HHHH\n'
+
+                            // This is my tweaked version of one of these dudes http://textart4u.blogspot.com/2012/12/gangnam-style-ascii-text-art.html
+            var frame_one =   '                xXXXXXx                     \n'
+                            + '              xXY      Yx                   \n'
+                            + '             xX          X                  \n'
+                            + '             X (  ) (  ) X                  \n'
+                            + '             X           X                  \n'
+                            + '              X  xXX    X                   \n'
+                            + '             ooX-XXY---x00o                 \n'
+                            + '            o000-000----0000o               \n'
+                            + '           0000000xxX00000000o              \n'
+                            + '            000000YXX00000000               \n'
+                            + '              o000-----0000o                \n'
+                            + '            o00000oXXXX00000o               \n'
+                            + '           o00XXXXXXXXXXXXX00o              \n'
+                            + '           xXXXXXXXXXXXXXXXXXXx             \n'
+                            + '          XXXXXXXYYYYYYYXXXXXXX             \n'
+                            + '          xXXXXXX      xXXXXXXX             \n'
+                            + '           XXXXXX     XXXXXXXx              \n'
+                            + '            xXXXX     XXXXXx                \n'
+
+            var frame_two =   '                 xXXXXXx                    \n'
+                            + '               xXY      Yx                  \n'
+                            + '              xX          X                 \n'
+                            + '              X  (  ) (  )X                 \n'
+                            + '              X           X                 \n'
+                            + '               X  xXX    X                  \n'
+                            + '              ooX-XXY---x00o                \n'
+                            + '             o000-000----0000o              \n'
+                            + '            0000000xxX00000000o             \n'
+                            + '             000000YXX00000000              \n'
+                            + '               o000-----0000o               \n'
+                            + '             o00000oXXXX000000o             \n'
+                            + '            o00XXXXXXXXXXXXXx00o            \n'
+                            + '           xXXXXXXXXXXXXXXXXXXXX            \n'
+                            + '           XXXXXXXYYYYYYYXXXXXXX            \n'
+                            + '           xXXXXXX      xXXXXXXX            \n'
+                            + '            XXXXXX     XXXXXXXx             \n'
+                            + '            xXXXX     XXXXXx                \n'
+
+            var frame_three = '                 xXXXXXx                    \n'
+                            + '               xXY      Yx                  \n'
+                            + '              xX          X                 \n'
+                            + '              X  (  ) (  )X                 \n'
+                            + '              X           X                 \n'
+                            + '               X  xXX    X                  \n'
+                            + '              ooX-XXY---x00o                \n'
+                            + '             o000-000----0000o              \n'
+                            + '            0000000xxX00000000o             \n'
+                            + '             000000YXX00000000              \n'
+                            + '               o000-----0000o               \n'
+                            + '              o00000oXXXXo0000o             \n'
+                            + '             o000oXXXXXXXXXo000o            \n'
+                            + '             XXXXXXXXXXXXXXXxXXx            \n'
+                            + '            xXXXXXXXXXXXXXXXXXXX            \n'
+                            + '            XXXXXXYY    YXXXXXXX            \n'
+                            + '            XXXXXX      xXXXXXXX            \n'
+                            + '            XXXXXX     XXXXXXx              \n'
+                            + '            xXXXX     XXXXXx                \n'
+
+            var frame_four =  '                xXXXXXx                     \n'
+                            + '              xXY      Yx                   \n'
+                            + '             xX          X                  \n'
+                            + '             X(  ) (  )  X                  \n'
+                            + '             X           X                  \n'
+                            + '              X  xXX    X                   \n'
+                            + '             ooX-XXY---x00o                  \n'
+                            + '            o000-000----0000o                \n'
+                            + '           0000000xxX00000000o               \n'
+                            + '            000000YXX00000000                \n'
+                            + '             o000-----0000o                 \n'
+                            + '           o00000oXXXX00000o                \n' 
+                            + '          o00XXXXXXXXXXXXX00o               \n'
+                            + '         xXXXXXXXXXXXXXXXXXXXx              \n'
+                            + '         XXXXXXXYYYYYYYXXXXXXX              \n'
+                            + '         xXXXXXY      YXXXXXXx              \n'
+                            + '          XXXXXX      XXXXXXx               \n'
+                            + '            xXXXX     xXXXXx                \n'
+
+            var frame_five =  '                xXXXXXx                     \n'
+                            + '              xXY      Yx                   \n'
+                            + '             xX          X                  \n'
+                            + '             X(  ) (  )  X                  \n'
+                            + '             X           X                  \n'
+                            + '              X  xXX    X                   \n'
+                            + '             ooX-XXY---x00o                  \n'
+                            + '            o000-000----0000o                \n'
+                            + '           0000000xxX00000000o               \n'
+                            + '            000000YXX00000000                \n'
+                            + '            o000-----0000o                 \n'
+                            + '           o000XXXXXXx0000o                \n' 
+                            + '          o00xXXXXXXXXXXx00o                \n' 
+                            + '         xXXXXXXXXXXXXXXXXXXx               \n'
+                            + '        XXXXXXXXXXXXXXXXXXXXx              \n'
+                            + '        XXXXXXX     YYXXXXXXX              \n'
+                            + '        xXXXXXY      YXXXXXXx              \n'
+                            + '          XXXXXX      XXXXXx               \n'
+                            + '            xXXXX     xXXXXx                \n'
+
+            setTimeout( function() {
+                console.log(space + we);
+
+                setTimeout( function() {
+                    console.log(space + are);
+
+                    setTimeout( function() {
+                        console.log(space + mother);
+
+                        setTimeout( function() {
+                            console.log(space + father);
+
+                            setTimeout( function() {
+                                console.log(space + gentlemen);
+
+                                setTimeout( function() {
+                                    console.log(space + frame_one);
+
+                                    setTimeout( function() {
+                                        console.log(space + frame_two);
+
+                                        setTimeout( function() {
+                                            console.log(space + frame_three);
+
+                                            setTimeout( function() {
+                                                console.log(space + frame_two);
+
+                                                setTimeout( function() {
+                                                    console.log(space + frame_one);
+
+                                                    setTimeout( function() {
+                                                        console.log(space + frame_four);
+
+                                                        setTimeout( function() {
+                                                            console.log(space + frame_five);
+
+                                                            setTimeout( function() {
+                                                                console.log(space + frame_four);
+
+                                                                setTimeout( function() {
+                                                                    console.log(space + frame_one);
+
+                                                                    setTimeout( function() {
+                                                                        console.log(space + frame_two);
+
+                                                                        setTimeout( function() {
+                                                                            console.log(space + frame_three);
+
+                                                                            setTimeout( function() {
+                                                                                console.log(space + frame_two);
+
+                                                                                setTimeout( function() {
+                                                                                    console.log(space + frame_one);
+
+                                                                                    setTimeout( function() {
+                                                                                        console.log(space + frame_four);
+
+                                                                                        setTimeout( function() {
+                                                                                            console.log(space + frame_five);
+
+                                                                                            setTimeout( function() {
+                                                                                                console.log(space + frame_four);
+
+                                                                                            },100);
+                                                                                        },100);
+                                                                                    },100);
+                                                                                },100);
+                                                                            },100);
+                                                                        },100);
+                                                                    },100);
+                                                                },100);
+                                                            },100);
+                                                        },100);
+                                                    },100);
+                                                },100);
+                                            },100);
+                                        },100);
+                                    },100);
+                                },1000);
+                            },500);
+                        },500);
+                    },500);
+                },500);
+            },500);
+        }// End michaelarestad
+
 	/*
 		This is not
 		The greatest comment in the world, no
