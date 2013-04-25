@@ -139,8 +139,7 @@ JSocial = function() {
             } else {
                 $tbeseda_div.append('<p>Can\'t geolocate you, get a better browser!</p>');
             }
-        }
-        
+        },
         michaelarestad: function michaelarestad(){
 
             // There's probably about a gazillion better ways to do this. Oh well. Refactor if you're awesome.
@@ -388,7 +387,6 @@ JSocial = function() {
                 },500);
             },500);
         }// End michaelarestad
-
 	/*
 		This is not
 		The greatest comment in the world, no
