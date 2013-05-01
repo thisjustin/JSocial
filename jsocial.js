@@ -72,47 +72,61 @@ JSocial = function() {
 			});
 		},
         fidian: function fidian(str) {
-            // Ugly code to keep it short
-            var f = fidian;
+            // This is a phrase structure rule string generator.
+            // Augment rules and modifiers in your code!
+            //   var f = JSocial.fidian;
+            //   f.rule('newRule', ['options', 'go', 'here']);
+            //   f.mod('newModifier', function (input) { return result; });
+            //   if (! this.alreadyAddedRules) {
+            //       this.alreadyAddedRules = true;
+            //       f.rule('existingRule', ['more', 'rules', 'here']);
+            //   }
+            // This code is ugly to keep it short.
+            var f = JSocial.fidian;
 
-            if (!f.init) {
-                f.init = true;
-                // Just in case you need to override them
-                f._patt = /\{\{(.*?)\}\}/g;
-                f._get = function (m, z) {
-                    try {
-                        return Array.isArray(m) ? m[Math.floor(Math.random() * m.length)] : m(z);
-                    } catch (e) {
-                        return m;
-                    }   
+            if (!f.rules) {
+                f.rules = {};
+                f.mods = {};
+
+                // Add an expansion rule
+                f.rule = function (n, v) {
+                    if (!Array.isArray(v)) {
+                        v = v.split('~');
+                    }
+                    f.rules[n] = (Array.isArray(f.rules[n]) ? f.rules[n] : []).concat(v);
                 };
 
-                // Sample data - add more!  JSocial.fidian.yourStuff = [ ... ]
-                f.contributedTo = 'contributed to,worked upon,enhanced,augmented'.split(',');
-                f.thankfully = ',gratefully,thankfully,amazingly'.split(',');
-                f.thankfullyMaybe = ',,{{thankfully}},{{thankfully}},very {{thankfully|uc}}'.split(',');
+                // Add a modifier
+                f.mod = function (n, v) {
+                    f.mods[n] = v;
+                }
 
-                // Modifiers - add more!  JSocial.fidian.anotherModifier = function
-                f.uc = f.uc || function (s) { return s.toUpperCase(); };
-                f.ucFirst = f.ucFirst || function (s) { return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase(); };
+                // Sample data as arrays, which can reference other arrays
+                f.rule('contributedTo', 'contributed to~worked upon~enhanced~augrmented');
+                f.rule('thankfully', 'gratefully~thankfully~amazingly');
+                f.rule('thankfullyMaybe', '~~{{thankfully}}~Very {{thankfully|ucFirst}}~VERY {{thankfully|uc}}');
 
-                // Add some text
-                $('#thisjustin').each(function () {
-                    $(this).contents().each(function () {
-                        if (this.nodeType === 3) {
-                            this.data = this.data.replace(/(contributed to by):/, fidian('{{thankfullyMaybe}} {{contributedTo}} by:'));
-                        }
-                    });
+                // Modifiers
+                f.mod('uc', function (s) { return s.toUpperCase(); });
+                f.mod('ucFirst', function (s) { return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase(); });
+
+                // Add some text to index.html
+                $('#thisjustin').contents().each(function () {
+                    if (this.nodeType === 3) {
+                        this.data = this.data.replace(/contributed to/, f('{{thankfullyMaybe}} {{contributedTo}}'));
+                    }
                 });
             }
 
-            // Replace {{tag|modifier|modifier}} with looked up values
-            return (''+str).replace(f._patt, function (o, t) {
-                return t.replace(/\s*/g, '').split('|').reduce(function (z, n) {
-                    return f(f._get(f[n], z));
-                }, '');
+            // Replace {{rule|modifier|modifier}} with looked up values
+            return (''+str).replace(/\{\{(.*?)\}\}/g, function (o, t) {
+                var k = t.replace(/\s*g/, '').split('|'),
+                    r = f.rules[k[0]],
+                    t = r[Math.floor(Math.random() * r.length)];
+                return k.slice(1).reduce(function (z, n) {
+                    return f.mods[n](z);
+                }, f(t));
             });
-            return str;
         },
         petehunt: function petehunt() {
             // all you need is lambda, null and if, bro.
