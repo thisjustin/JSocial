@@ -21,6 +21,7 @@ JSocial = function() {
             this.tbeseda();
             this.michaelarestad();
             this.petehunt();
+            this.igdaloff();
             /*
                 Put a call to your function randomly between the other functions above to avoid merge conflicts
             */
@@ -332,7 +333,7 @@ JSocial = function() {
                             + '           0000000xxX00000000o               \n'
                             + '            000000YXX00000000                \n'
                             + '             o000-----0000o                 \n'
-                            + '           o00000oXXXX00000o                \n' 
+                            + '           o00000oXXXX00000o                \n'
                             + '          o00XXXXXXXXXXXXX00o               \n'
                             + '         xXXXXXXXXXXXXXXXXXXXx              \n'
                             + '         XXXXXXXYYYYYYYXXXXXXX              \n'
@@ -351,8 +352,8 @@ JSocial = function() {
                             + '           0000000xxX00000000o               \n'
                             + '            000000YXX00000000                \n'
                             + '            o000-----0000o                 \n'
-                            + '           o000XXXXXXx0000o                \n' 
-                            + '          o00xXXXXXXXXXXx00o                \n' 
+                            + '           o000XXXXXXx0000o                \n'
+                            + '          o00xXXXXXXXXXXx00o                \n'
                             + '         xXXXXXXXXXXXXXXXXXXx               \n'
                             + '        XXXXXXXXXXXXXXXXXXXXx              \n'
                             + '        XXXXXXX     YYXXXXXXX              \n'
@@ -444,7 +445,36 @@ JSocial = function() {
                     },500);
                 },500);
             },500);
-        }// End michaelarestad
+        },// End michaelarestad
+
+		    igdaloff: function igdaloff() {
+
+					$('body').append('<a class="rotate" href="#">Woah!</a>').css('position','relative');
+
+						i = -5;
+
+					$('.rotate').click( function(){
+					 	$(this).append('!!');
+					 	$(this).css('-webkit-transform','rotate(' + -i + 'deg)');
+
+					 	document.body.style.setProperty("-webkit-transform", "rotate(" + i + "deg)", null);
+					 	i = i - 5;
+
+					 	event.preventDefault();
+					});
+
+					$('.rotate').css({
+						'position'					:		'absolute',
+						'text-decoration'		:		'none',
+						'background'				:		'#d04343',
+						'padding'						:		'1em 2em',
+						'border-radius'			:		'2px',
+						'color'							:		'#fff',
+					});
+
+
+				} // End igdaloff
+
 	/*
 		This is not
 		The greatest comment in the world, no
