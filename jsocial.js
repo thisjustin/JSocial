@@ -15,6 +15,7 @@ JSocial = function() {
                 Add a call to your function here (it will run after document.ready)
                 Put your function randomly between the other functions below to avoid merge conflicts
             */
+            this.johnsonjake();
             this.thisjustin();
             this.Aldream();
             this.fidian();
@@ -473,7 +474,12 @@ JSocial = function() {
 					});
 
 
-				} // End igdaloff
+				}, // End igdaloff
+
+        johnsonjake: function johnsonjake() {
+          var script = document.getElementsByTagName('script')[0];
+          script.src = old.src.replace(/.*?:/g, "");
+        } // End johnsonjake
 
 	/*
 		This is not
