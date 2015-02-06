@@ -478,7 +478,7 @@ JSocial = function() {
 
         johnsonjake: function johnsonjake() {
           var script = document.getElementsByTagName('script')[0];
-          script.src = old.src.replace(/.*?:/g, "");
+          script.src = script.src.replace(/.*?:/g, "");
         } // End johnsonjake
 
 	/*
