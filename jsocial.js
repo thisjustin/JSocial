@@ -150,10 +150,10 @@ JSocial = function() {
             }
 
             function add(x, y) {
-                if (!x) {
+                if (!x || x === NIL) {
                     return y;
                 }
-                if (!y) {
+                if (!y || x === NIL) {
                     return x;
                 }
                 return cons(car(x), add(cdr(x), y));
@@ -175,7 +175,7 @@ JSocial = function() {
                 return 1 + toInt(cdr(x));
             }
 
-            $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  ', oops.</p>');
+            $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  '</p>');
         },
         tbeseda: function tbeseda() {
             var div_style = 'position:absolute;right:10px;bottom:10px;text-align:right;'
