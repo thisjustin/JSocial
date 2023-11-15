@@ -88,6 +88,9 @@ JSocial = function() {
             //   // If "{{name}}" expanded to "fidian", then "{{name|length}}" expands to 6.
             //   f.mod('length', s => s.length);
             //
+            //   // To use, call f() with the text you want to display.
+            //   console.log(f("My favorite color is {{color}}"));
+            //
             // This code is ugly to keep it short.
             var f = JSocial.fidian;
 
