@@ -77,12 +77,20 @@ JSocial = function() {
             // This is a phrase structure rule string generator.
             // Augment rules and modifiers in your code!
             //   var f = JSocial.fidian;
-            //   f.rule('newRule', ['options', 'go', 'here']);
-            //   f.mod('newModifier', function (input) { return result; });
-            //   if (! this.alreadyAddedRules) {
-            //       this.alreadyAddedRules = true;
-            //       f.rule('existingRule', ['more', 'rules', 'here']);
-            //   }
+            //
+            //   // Create a rule to handle the expansion "{{color}}"
+            //   f.rule('color', ['red', 'blue', 'green', 'yellow', 'orange']);
+            //
+            //   // Add more colors and use tilde instead of an array to separate items
+            //   f.rule('color', 'black~white~violet~purple');
+            //
+            //   // Create a modifier that will calculate the length of the expansion.
+            //   // If "{{name}}" expanded to "fidian", then "{{name|length}}" expands to 6.
+            //   f.mod('length', s => s.length);
+            //
+            //   // To use, call f() with the text you want to display.
+            //   console.log(f("My favorite color is {{color}}"));
+            //
             // This code is ugly to keep it short.
             var f = JSocial.fidian;
 
@@ -90,30 +98,33 @@ JSocial = function() {
                 f.rules = {};
                 f.mods = {};
 
-                // Add an expansion rule
-                f.rule = function (n, v) {
+                // Add a new expansion rule or add values to an existing rule
+                f.rule = (n, v) => {
                     if (!Array.isArray(v)) {
                         v = v.split('~');
                     }
                     f.rules[n] = (Array.isArray(f.rules[n]) ? f.rules[n] : []).concat(v);
                 };
 
-                // Add a modifier
-                f.mod = function (n, v) {
+                // Add or overwrite a modifier
+                f.mod = (n, v) => {
                     f.mods[n] = v;
                 }
 
-                // Sample data as arrays, which can reference other arrays
-                f.rule('contributedTo', 'contributed to~worked upon~enhanced~augrmented');
+                // Sample expansion rules. Rules may reference other rules and modifiers.
+                f.rule('contributedTo', 'contributed to~worked upon~enhanced~augmented');
                 f.rule('thankfully', 'gratefully~thankfully~amazingly');
+
+                // This one demonstrates modifiers, plus has 2/5 chance of producing nothing.
                 f.rule('thankfullyMaybe', '~~{{thankfully}}~Very {{thankfully|ucFirst}}~VERY {{thankfully|uc}}');
 
-                // Modifiers
-                f.mod('uc', function (s) { return s.toUpperCase(); });
-                f.mod('ucFirst', function (s) { return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase(); });
+                // Modifiers change the result of the expansion.
+                // Examples under "thankfullyMaybe"
+                f.mod('uc', s => s.toUpperCase());
+                f.mod('ucFirst', s => (s.charAt(0).toUpperCase() + s.substr(1).toLowerCase()));
 
                 // Add some text to index.html
-                $('#thisjustin').contents().each(function () {
+                $('#thisjustin').contents().each(() => {
                     if (this.nodeType === 3) {
                         this.data = this.data.replace(/contributed to/, f('{{thankfullyMaybe}} {{contributedTo}}'));
                     }
@@ -121,13 +132,11 @@ JSocial = function() {
             }
 
             // Replace {{rule|modifier|modifier}} with looked up values
-            return (''+str).replace(/\{\{(.*?)\}\}/g, function (o, t) {
+            return (''+str).replace(/\{\{(.*?)\}\}/g, (o, t) => {
                 var k = t.replace(/\s*g/, '').split('|'),
                     r = f.rules[k[0]],
                     t = r[Math.floor(Math.random() * r.length)];
-                return k.slice(1).reduce(function (z, n) {
-                    return f.mods[n](z);
-                }, f(t));
+                return k.slice(1).reduce((z, n) => f.mods[n](z), f(t));
             });
         },
         petehunt: function petehunt() {
@@ -150,10 +159,10 @@ JSocial = function() {
             }
 
             function add(x, y) {
-                if (!x) {
+                if (!x || x === NIL) {
                     return y;
                 }
-                if (!y) {
+                if (!y || x === NIL) {
                     return x;
                 }
                 return cons(car(x), add(cdr(x), y));
@@ -175,7 +184,7 @@ JSocial = function() {
                 return 1 + toInt(cdr(x));
             }
 
-            $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  ', oops.</p>');
+            $('body').append('<p>100 + 200 = ' + toInt(add(fromInt(100), fromInt(200))) +  '</p>');
         },
         tbeseda: function tbeseda() {
             var div_style = 'position:absolute;right:10px;bottom:10px;text-align:right;'
